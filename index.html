@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Expense Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <h1>Expense Tracker</h1>
+  <p class="sub">Add your daily spending and see where your money goes.</p>
+
+  <section class="summary">
+    <div class="total"><span>Total spent</span><strong id="total">₹0</strong></div>
+    <div class="total"><span>Entries</span><strong id="count">0</strong></div>
+  </section>
+
+  <form id="form" class="card">
+    <input id="title" type="text" placeholder="What did you buy?" required maxlength="40">
+    <input id="amount" type="number" placeholder="Amount (₹)" min="1" step="any" required>
+    <select id="category">
+      <option>Food</option><option>Travel</option><option>Shopping</option>
+      <option>Bills</option><option>Other</option>
+    </select>
+    <input id="date" type="date" required>
+    <button type="submit">Add expense</button>
+  </form>
+
+  <section class="card">
+    <h2>By category</h2>
+    <div id="bars"></div>
+  </section>
+
+  <section class="card">
+    <div class="row">
+      <h2>Expenses</h2>
+      <select id="filter" aria-label="Filter by category">
+        <option value="All">All</option><option>Food</option><option>Travel</option>
+        <option>Shopping</option><option>Bills</option><option>Other</option>
+      </select>
+    </div>
+    <ul id="list"></ul>
+    <p id="empty" class="empty">No expenses yet. Add your first one above.</p>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
